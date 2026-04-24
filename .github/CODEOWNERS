@@ -1,0 +1,23 @@
+# Default owners for everything
+*                               @tech-lead
+
+# Frontend
+/apps/web/                      @frontend-lead
+/apps/admin/                    @frontend-lead
+/packages/ui/                   @frontend-lead
+
+# Backend
+/services/api/                  @backend-lead
+/database/                      @backend-lead
+
+# AI
+/services/ai-service/           @ai-lead
+/services/crawler-service/      @ai-lead
+
+# DevOps
+/infrastructure/                @devops-lead
+/.github/workflows/             @devops-lead
+/docker-compose*.yml            @devops-lead
+
+# Docs
+/docs/                          @tech-lead @product-owner
