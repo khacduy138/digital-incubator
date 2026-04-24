@@ -1,9 +1,5 @@
 {
-  "name": "@incubator/admin",
+  "name": "@incubator/database-pkg",
   "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "echo 'Admin app pending...'",
-    "build": "echo 'Admin app pending...'"
-  }
+  "private": true
 }
