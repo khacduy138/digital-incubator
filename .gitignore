@@ -1,0 +1,109 @@
+# ============ DEPENDENCIES ============
+node_modules/
+.pnpm-store/
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ============ BUILD OUTPUT ============
+.next/
+out/
+build/
+dist/
+.turbo/
+.cache/
+*.tsbuildinfo
+
+# NestJS
+services/api/dist/
+
+# ============ ENVIRONMENT ============
+.env
+.env.local
+.env.*.local
+!.env.example
+!.env.test
+
+# ============ IDE ============
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ============ LOGS ============
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ============ TESTING ============
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+playwright/.cache/
+
+# ============ DATABASE ============
+*.sqlite
+*.sqlite3
+*.db
+database/backups/*.sql
+!database/backups/.gitkeep
+
+# Prisma
+prisma/migrations/dev/
+
+# ============ DOCKER ============
+.docker/
+docker-volumes/
+
+# ============ AI / ML ============
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.h5
+models/downloaded/
+data/raw/
+data/processed/
+.ipynb_checkpoints/
+
+# ============ DEPLOYMENT ============
+.vercel/
+.netlify/
+.serverless/
+
+# ============ MISC ============
+*.pem
+*.key
+*.crt
+.sentryclirc
+.terraform/
+*.tfstate
+*.tfstate.*
+tsconfig.tsbuildinfo
