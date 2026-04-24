@@ -7,13 +7,13 @@ export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col">
       {/* ═══════════ HEADER ═══════════ */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+      <header className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur-sm">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Sparkles className="h-6 w-6 text-brand-600" />
             <span className="font-display text-xl font-bold">Digital Incubator</span>
           </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+          <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
             <Link href="#features" className="hover:text-brand-600">
               Tính năng
             </Link>
@@ -81,9 +81,9 @@ export default function HomePage() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="group rounded-xl border bg-card p-8 transition-all hover:shadow-lg"
+                className="bg-card group rounded-xl border p-8 transition-all hover:shadow-lg"
               >
-                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-brand-100 text-brand-600 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-brand-100 text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white">
                   <feature.icon className="h-6 w-6" />
                 </div>
                 <h3 className="mb-2 text-xl font-semibold">{feature.title}</h3>

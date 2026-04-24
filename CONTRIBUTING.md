@@ -31,14 +31,14 @@ Xem [Getting Started Guide](./docs/guides/getting-started.md).
 
 Chúng tôi dùng **Git Flow** cải tiến:
 
-| Branch | Mục đích | Merge vào |
-| :--- | :--- | :--- |
-| "main" | Production code | - |
-| "develop" | Integration branch | "main" (qua release) |
-| "feat/*" | Feature mới | "develop" |
-| "fix/*" | Bug fixes | "develop" |
-| "hotfix/*" | Emergency fixes | "main" + "develop" |
-| "release/*" | Release preparation | "main" + "develop" |
+| Branch       | Mục đích            | Merge vào            |
+| :----------- | :------------------ | :------------------- |
+| "main"       | Production code     | -                    |
+| "develop"    | Integration branch  | "main" (qua release) |
+| "feat/\*"    | Feature mới         | "develop"            |
+| "fix/\*"     | Bug fixes           | "develop"            |
+| "hotfix/\*"  | Emergency fixes     | "main" + "develop"   |
+| "release/\*" | Release preparation | "main" + "develop"   |
 
 ---
 
@@ -56,19 +56,19 @@ Chúng tôi dùng [Conventional Commits](https://www.conventionalcommits.org/):
 
 ### Types
 
-* "feat": Tính năng mới
-* "fix": Sửa bug
-* "docs": Chỉ sửa docs
-* "style": Format code (không thay đổi logic)
-* "refactor": Refactor code
-* "perf": Cải thiện performance
-* "test": Thêm/sửa tests
-* "chore": Build, tooling, deps
-* "ci": CI/CD changes
+- "feat": Tính năng mới
+- "fix": Sửa bug
+- "docs": Chỉ sửa docs
+- "style": Format code (không thay đổi logic)
+- "refactor": Refactor code
+- "perf": Cải thiện performance
+- "test": Thêm/sửa tests
+- "chore": Build, tooling, deps
+- "ci": CI/CD changes
 
 ### Scopes
 
-* "web", "admin", "api", "ai", "crawler", "db", "ui", "docs", "deps"
+- "web", "admin", "api", "ai", "crawler", "db", "ui", "docs", "deps"
 
 ### Ví dụ
 
@@ -86,17 +86,17 @@ chore(deps): bump next to 14.2.0
 
 ### TypeScript
 
-* **Strict mode** bật mặc định
-* Ưu tiên "type" cho simple, "interface" cho extensible
-* Không dùng "any" (dùng "unknown" nếu cần)
-* Export types qua "packages/types"
+- **Strict mode** bật mặc định
+- Ưu tiên "type" cho simple, "interface" cho extensible
+- Không dùng "any" (dùng "unknown" nếu cần)
+- Export types qua "packages/types"
 
 ### Naming
 
-* "PascalCase": Components, Classes, Types, Interfaces
-* "camelCase": Variables, functions
-* "SCREAMING_SNAKE_CASE": Constants
-* "kebab-case": File names (trừ React components)
+- "PascalCase": Components, Classes, Types, Interfaces
+- "camelCase": Variables, functions
+- "SCREAMING_SNAKE_CASE": Constants
+- "kebab-case": File names (trừ React components)
 
 ### Component Structure (React)
 

@@ -37,8 +37,8 @@ cp .env.example .env
 
 Mở `.env` và điền:
 
-* `OPENAI_API_KEY`: Lấy từ [https://platform.openai.com](https://platform.openai.com)
-* Các biến khác có thể giữ default cho local dev
+- `OPENAI_API_KEY`: Lấy từ [https://platform.openai.com](https://platform.openai.com)
+- Các biến khác có thể giữ default cho local dev
 
 ### 4. Install dependencies
 
@@ -92,20 +92,20 @@ pnpm --filter @incubator/api dev
 
 ## Accessing services
 
-| Service | URL |
-| :--- | :--- |
-| Web App | http://localhost:3000 |
-| Admin | http://localhost:3001 |
-| API Docs (Swagger) | http://localhost:4000/api/docs |
-| AI Docs | http://localhost:8000/docs |
-| Prisma Studio | http://localhost:5555 (pnpm db:studio) |
-| MinIO Console | http://localhost:9001 (admin/minioadmin) |
-| Mailhog | http://localhost:8025 |
+| Service            | URL                                      |
+| :----------------- | :--------------------------------------- |
+| Web App            | http://localhost:3000                    |
+| Admin              | http://localhost:3001                    |
+| API Docs (Swagger) | http://localhost:4000/api/docs           |
+| AI Docs            | http://localhost:8000/docs               |
+| Prisma Studio      | http://localhost:5555 (pnpm db:studio)   |
+| MinIO Console      | http://localhost:9001 (admin/minioadmin) |
+| Mailhog            | http://localhost:8025                    |
 
 ## Default accounts (from seed)
 
-* **Admin:** admin@incubator.vn / Admin@123456
-* **Student:** nguyenvana@student.vn / Student@123
+- **Admin:** admin@incubator.vn / Admin@123456
+- **Student:** nguyenvana@student.vn / Student@123
 
 ## Common Tasks
 

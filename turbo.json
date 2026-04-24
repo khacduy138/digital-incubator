@@ -6,12 +6,7 @@
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**", "dist/**", "build/**"],
-      "env": [
-        "DATABASE_URL",
-        "NEXTAUTH_SECRET",
-        "NEXTAUTH_URL",
-        "OPENAI_API_KEY"
-      ]
+      "env": ["DATABASE_URL", "NEXTAUTH_SECRET", "NEXTAUTH_URL", "OPENAI_API_KEY"]
     },
     "dev": {
       "cache": false,

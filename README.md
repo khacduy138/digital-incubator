@@ -26,11 +26,11 @@
 
 ### ✨ 3 Tính năng cốt lõi (MVP)
 
-| Tính năng | Mô tả ngắn |
-|---|---|
+| Tính năng                     | Mô tả ngắn                                                                     |
+| ----------------------------- | ------------------------------------------------------------------------------ |
 | 🗺️ **Startup Roadmap Engine** | AI phân tích ý tưởng → đề xuất lộ trình học + module phù hợp từ Coursera/Udemy |
-| 🤖 **AI Co-Founder** | Chatbot RAG đóng vai trò mentor, teaching assistant, critic, planner |
-| 📋 **Startup Workspace** | Checklist, task management, document storage, progress dashboard |
+| 🤖 **AI Co-Founder**          | Chatbot RAG đóng vai trò mentor, teaching assistant, critic, planner           |
+| 📋 **Startup Workspace**      | Checklist, task management, document storage, progress dashboard               |
 
 ---
 
@@ -98,7 +98,7 @@ Chi tiết: [`docs/architecture/overview.md`](./docs/architecture/overview.md)
 
 ### Cài đặt
 
-```bash
+````bash
 # 1. Clone repository
 git clone https://github.com/your-org/digital-incubator.git
 cd digital-incubator
@@ -140,7 +140,7 @@ digital-incubator/
 ├── design/              # Figma exports, brand assets
 ├── docs/                # Documentation
 └── scripts/             # Utility scripts
-```
+````
 
 Chi tiết: `docs/architecture/overview.md`
 
@@ -165,13 +165,13 @@ Chúng tôi hoan nghênh mọi đóng góp! Vui lòng đọc [CONTRIBUTING.md](C
 
 ### 👥 Team
 
-| Vai trò | Người phụ trách |
-| :--- | :--- |
-| Product Owner | TBD |
-| Tech Lead | TBD |
-| Backend Lead | TBD |
-| Frontend Lead | TBD |
-| AI Lead | TBD |
+| Vai trò       | Người phụ trách |
+| :------------ | :-------------- |
+| Product Owner | TBD             |
+| Tech Lead     | TBD             |
+| Backend Lead  | TBD             |
+| Frontend Lead | TBD             |
+| AI Lead       | TBD             |
 
 ---
 

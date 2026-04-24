@@ -11,12 +11,14 @@ Dự án có nhiều ứng dụng (web, admin) và services (api, ai, crawler) c
 ## Decision
 
 Sử dụng **Monorepo** với:
+
 - **pnpm workspaces**: Package manager
 - **Turborepo**: Build orchestration + cache
 
 ## Rationale
 
 ### Ưu điểm Monorepo
+
 1. **Type sharing**: `@incubator/types` dùng chung FE-BE, không sync API contracts thủ công
 2. **Atomic commits**: 1 PR thay đổi schema + API + UI → không bị inconsistent
 3. **Refactoring dễ**: Rename symbol cross-package với TypeScript
@@ -24,6 +26,7 @@ Sử dụng **Monorepo** với:
 5. **Turborepo cache**: Build lại chỉ phần thay đổi
 
 ### Nhược điểm chấp nhận được
+
 1. Repo size lớn hơn → Dùng git partial clone nếu cần
 2. CI thời gian dài hơn → Turborepo remote cache giải quyết
 
