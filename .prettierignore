@@ -1,0 +1,12 @@
+node_modules
+.next
+.turbo
+dist
+build
+coverage
+pnpm-lock.yaml
+*.min.js
+*.min.css
+database/migrations
+services/ai-service
+.env*
