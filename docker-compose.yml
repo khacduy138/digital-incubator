@@ -1,0 +1,110 @@
+version: '3.9'
+
+name: digital-incubator
+
+services:
+  # ═══════════════════════════════════════════════════════════
+  # PostgreSQL with pgvector extension
+  # ═══════════════════════════════════════════════════════════
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: incubator-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: incubator
+      POSTGRES_PASSWORD: incubator_dev_password
+      POSTGRES_DB: incubator
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./infrastructure/docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U incubator']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - incubator-network
+
+  # ═══════════════════════════════════════════════════════════
+  # Redis for caching & queue
+  # ═══════════════════════════════════════════════════════════
+  redis:
+    image: redis:7-alpine
+    container_name: incubator-redis
+    restart: unless-stopped
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - incubator-network
+
+  # ═══════════════════════════════════════════════════════════
+  # Qdrant vector database for RAG
+  # ═══════════════════════════════════════════════════════════
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: incubator-qdrant
+    restart: unless-stopped
+    ports:
+      - '6333:6333'
+      - '6334:6334'
+    volumes:
+      - qdrant_data:/qdrant/storage
+    networks:
+      - incubator-network
+
+  # ═══════════════════════════════════════════════════════════
+  # MinIO (S3-compatible object storage)
+  # ═══════════════════════════════════════════════════════════
+  minio:
+    image: minio/minio:latest
+    container_name: incubator-minio
+    restart: unless-stopped
+    ports:
+      - '9000:9000'
+      - '9001:9001'
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:9000/minio/health/live']
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    networks:
+      - incubator-network
+
+  # ═══════════════════════════════════════════════════════════
+  # Mailhog (local email testing)
+  # ═══════════════════════════════════════════════════════════
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: incubator-mailhog
+    restart: unless-stopped
+    ports:
+      - '1025:1025' # SMTP
+      - '8025:8025' # Web UI
+    networks:
+      - incubator-network
+
+volumes:
+  postgres_data:
+  redis_data:
+  qdrant_data:
+  minio_data:
+
+networks:
+  incubator-network:
+    driver: bridge
