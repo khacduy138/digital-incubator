@@ -37,4 +37,27 @@ Digital Incubator áp dụng kiến trúc **3 lớp** theo đúng đề án:
 - **MinIO/S3**: User uploads (MVP files, documents)
 
 ## 3. Request Flow Example – AI Mentor Chat
+```
+User → Web App → API Gateway (auth, rate-limit) ↓ AI Service 
+                                                ↓ 
+                                        ┌───────┴───────┐ 
+                                        ↓               ↓ 
+                                      Qdrant         OpenAI
+                                    (retrieve)     (generate)
+                                        ↓               ↓
+                                        └───────┬───────┘
+                                                ↓ 
+                                      Response + Citations 
+                                                ↓ 
+                                       Save to PostgreSQL 
+                                                ↓ 
+                                      Stream back to User
 
+```
+## 4. Deployment Topology
+
+- **Development**: Docker Compose (tất cả local)
+- **Staging**: Kubernetes trên single cluster
+- **Production**: Multi-AZ Kubernetes + managed services (RDS, ElastiCache)
+
+See [`adr/`](./adr/) for detailed decision records.
