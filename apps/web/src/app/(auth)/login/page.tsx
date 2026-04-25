@@ -100,7 +100,7 @@ export default function LoginPage() {
         <div className="bg-gray-50 p-6 text-center border-t border-gray-100">
           <p className="text-sm text-gray-600">
             Chưa có tài khoản?{' '}
-            <Link href="/register" className="font-semibold text-blue-600 hover:text-blue-500">
+            <Link href="../register" className="font-semibold text-blue-600 hover:text-blue-500">
               Đăng ký ngay
             </Link>
           </p>
