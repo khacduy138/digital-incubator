@@ -118,6 +118,7 @@ pnpm db:seed
 
 # 6. Start dev environment (all services)
 pnpm dev
+````
 
 ### Sau khi chạy, truy cập:
 
